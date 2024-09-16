@@ -28,7 +28,7 @@ cyan='\e[0;36m'
 function Banner () {
     echo -e "${grn}"
     figlet "Project: SOC-CHECKER"
-    echo -e "A vulnerability scan tool by Daniel ben-yehuda ${norm}"
+    echo -e "Security stimulation and exercise tool by Daniel ben-yehuda ${norm}"
     date
     sleep 2
 }
@@ -70,7 +70,7 @@ usercheck
 function info () { #basic info of the scripts purpuse
     echo -e "[-]Project SOC-Checker is an educational initiative designed to create contained and simulated network attacks to stimulate the SOC team, validate defensive measures, and reinforce the team's muscle memory.
 
-[-]The script offers users the choice of executing three different attacks or running a random attack in a "Fire-And-Forget" manner, requiring minimal familiarity with the attack tool itself. Additionally, the script maintains a log of the actions performed, as well as a timestamp of the team's response to impede the attack.
+[-]The script offers users the choice of executing three different attacks or running a random attack in a 'Fire-And-Forget' manner, requiring minimal familiarity with the attack tool itself. Additionally, the script maintains a log of the actions performed, as well as a timestamp of the team's response to mitigate the attack.
 
 [-]The script does not make any changes to any machine on the network nor does it collect any internal data.\n"
 read -p "::Press any key to continue..."
@@ -129,7 +129,7 @@ function method () { #select attack mode, pass-spray with admin as user and just
     read -p ":: " attack
 
     if [ $attack == 1 ]; then
-    echo -e "------------------------\n ATTACK MODE SELECTED :: PASSWORD SPRAY\n------------------------n\ $target" >> $log
+    echo -e "------------------------\n ATTACK MODE SELECTED :: Bruteforce\n------------------------n\ $target" >> $log
 
     fi 
     if [ $attack == 2 ]; then
@@ -149,7 +149,7 @@ method
 
 
 function spray (){ #scan target sequentialy for any one of the services and set the first one it finds as target
-echo -e "${yel}[!] PASSWORD SPRAY ATTACK MODE SELECTED [!]"
+echo -e "${yel}[!] PASSWORD BRUTEFORCE MODE SELECTED [!]"
 
 
         echo -e "${yel}[!] Scanning for relevant services -> ${norm}"
